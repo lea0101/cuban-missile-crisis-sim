@@ -1,0 +1,355 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Fonts/TLWGTitle.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/TLWGTypewriter/TlwgTypewriter.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
+[ext_resource path="res://Images/main.png" type="Texture" id=4]
+[ext_resource path="res://Images/buttonglow.png" type="Texture" id=5]
+[ext_resource path="res://Images/filter.png" type="Texture" id=6]
+[ext_resource path="res://Images/overlay.png" type="Texture" id=7]
+[ext_resource path="res://Images/tree.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 43
+outline_size = 1
+outline_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 21
+outline_size = 1
+outline_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 1
+outline_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+font_data = ExtResource( 2 )
+
+[node name="main" type="Sprite"]
+position = Vector2( 512, 300 )
+z_index = -1
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="overlay" type="Sprite" parent="."]
+z_index = 2
+texture = ExtResource( 7 )
+
+[node name="filter" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.160784 )
+z_index = 1
+texture = ExtResource( 6 )
+
+[node name="MainControl" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="MainControl"]
+margin_left = -361.0
+margin_top = -194.0
+margin_right = 257.0
+margin_bottom = -128.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "CUBAN MISSILE CRISIS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="TextureButton" parent="MainControl"]
+margin_left = -391.613
+margin_top = -67.2832
+margin_right = -191.613
+margin_bottom = -17.2832
+rect_scale = Vector2( 0.5, 0.5 )
+hint_tooltip = "Click to play!"
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MainControl/PlayButton"]
+margin_left = 61.4326
+margin_top = -9.12756
+margin_right = 180.433
+margin_bottom = 55.8724
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReadPaper" type="TextureButton" parent="MainControl"]
+margin_left = -391.613
+margin_top = -0.268158
+margin_right = 8.38699
+margin_bottom = 49.7318
+rect_scale = Vector2( 0.5, 0.5 )
+hint_tooltip = "More sources and interesting articles to read"
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MainControl/ReadPaper"]
+margin_left = 61.4326
+margin_top = -8.80737
+margin_right = 360.433
+margin_bottom = 56.1926
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "Sources"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sources" type="TextureButton" parent="MainControl"]
+margin_left = -391.613
+margin_top = 61.0837
+margin_right = 8.38699
+margin_bottom = 111.084
+rect_scale = Vector2( 0.5, 0.5 )
+hint_tooltip = "Read about the win strategy"
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MainControl/Sources"]
+margin_left = 61.4326
+margin_top = -1.34418
+margin_right = 360.433
+margin_bottom = 63.6558
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "How to Win"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinningControl" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -512.0
+margin_bottom = -300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="WinningControl"]
+margin_left = 101.242
+margin_top = 201.106
+margin_right = 501.242
+margin_bottom = 501.106
+custom_fonts/normal_font = SubResource( 1 )
+text = "From a basic game theory perspective, the outcomes would be organized as they are in the image to the right. (Best outcome = 4, worst outcome = 1) This model assumes that a blockade would not be seen as an aggressive move (based on the reaction of the USSR in real life). 
+
+For the USSR, the favorite outcome is where the US does a blockade, and the USSR maintains the missiles. This would lead to the USSR having an advantage over the US.
+
+The opposite is true of the US--the favorite outcome is where they conduct an airstrike and the USSR withdraws, since that would be a more glorious victory than a peaceful compromise.
+
+If we use game theory to \"solve\" this specific model, then the equilibrium is (3,3) where the US does a blockade and the USSR withdraws. For both countries, this is the second favorite option because while it does not lead to their own loss, they do not get a substantial victory.
+
+If you wanted to apply this to the actual game, it would return the same equilibrium--the most favorable outcome is where both sides actively seek the least violent option. 
+
+However, in this game, you are in the position of President Kennedy during this time--he could not be sure that the USSR was following game theory, and there was no definite way to know whether or not Khrushchev was looking for peace. Perhaps Khrushchev is willing to go to nuclear war because he believes the USSR would win.
+
+But--and this is what essentially happened in real life--both sides must recognize the devastating impact that a nuclear war would have on not just the two countries, but the rest of the world. Nuclear war would bring about great destruction and render the majority of the planet inhabitable, along with a massive loss in food supply due to radiation.
+
+At any moment during this crisis, Khrushchev could have decided to start a nuclear war--the only available response for the US would be to launch nuclear weapons back, leading to mutually assured destruction.
+
+There is no way to know what Khrushchev will decide in this game. The best way to guarantee a  win is to not play."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="WinningControl"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -159.5
+margin_top = 29.7302
+margin_right = 159.5
+margin_bottom = 98.7302
+custom_fonts/font = ExtResource( 1 )
+text = "How to Win"
+
+[node name="Back" type="TextureButton" parent="WinningControl"]
+margin_left = 120.387
+margin_top = 54.6146
+margin_right = 320.387
+margin_bottom = 104.615
+rect_scale = Vector2( 0.5, 0.5 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="WinningControl/Back"]
+margin_left = 107.602
+margin_right = 406.602
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tree" type="Sprite" parent="WinningControl"]
+position = Vector2( 724.479, 345.958 )
+texture = ExtResource( 9 )
+
+[node name="SourcesControl" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -512.0
+margin_bottom = -300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="SourcesControl"]
+margin_left = -212.591
+margin_top = 483.572
+margin_right = 1249.41
+margin_bottom = 558.572
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "(These will open as links in your browser)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="SourcesControl"]
+margin_left = -212.591
+margin_top = 77.2407
+margin_right = 1249.41
+margin_bottom = 152.241
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "Extra Sources"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Source1" type="TextureButton" parent="SourcesControl"]
+margin_left = 151.306
+margin_top = 192.326
+margin_right = 1751.31
+margin_bottom = 262.326
+rect_scale = Vector2( 0.5, 0.5 )
+hint_tooltip = "Read about the win strategy"
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="SourcesControl/Source1"]
+margin_left = 75.5953
+margin_right = 1537.6
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "JFK Library Cuban Missile Crisis Day-by-Day"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Source2" type="TextureButton" parent="SourcesControl"]
+margin_left = 162.53
+margin_top = 286.002
+margin_right = 1624.53
+margin_bottom = 356.002
+rect_scale = Vector2( 0.5, 0.5 )
+hint_tooltip = "Read about the win strategy"
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="SourcesControl/Source2"]
+margin_right = 1462.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "National Archives Article on the Crisis"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Source3" type="TextureButton" parent="SourcesControl"]
+margin_left = 162.285
+margin_top = 386.282
+margin_right = 1624.29
+margin_bottom = 456.282
+rect_scale = Vector2( 0.5, 0.5 )
+hint_tooltip = "Read about the win strategy"
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="SourcesControl/Source3"]
+margin_left = 98.2739
+margin_right = 1356.27
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "Mathematics/Game Theory of the Crisis"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureButton" parent="SourcesControl"]
+margin_left = 120.387
+margin_top = 54.6146
+margin_right = 320.387
+margin_bottom = 104.615
+rect_scale = Vector2( 0.5, 0.5 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="SourcesControl/Back"]
+margin_left = 107.602
+margin_right = 406.602
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.654902, 0.803922, 0.878431, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="MainControl/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="MainControl/ReadPaper" to="." method="_on_ReadPaper_pressed"]
+[connection signal="pressed" from="MainControl/Sources" to="." method="_on_Sources_pressed"]
+[connection signal="pressed" from="WinningControl/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="SourcesControl/Source1" to="." method="_on_Source1_pressed"]
+[connection signal="pressed" from="SourcesControl/Source2" to="." method="_on_Source2_pressed"]
+[connection signal="pressed" from="SourcesControl/Source3" to="." method="_on_Source3_pressed"]
+[connection signal="pressed" from="SourcesControl/Back" to="." method="_on_Back_pressed"]

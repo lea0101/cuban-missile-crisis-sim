@@ -1,0 +1,770 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Fonts/Digital/DS-DIGI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/WritingFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/Opening.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/Typewriter/JMH Typewriter.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Images/US-Cuba.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=6]
+[ext_resource path="res://Images/USSR-Italy-Turkey.png" type="Texture" id=7]
+[ext_resource path="res://Images/ussr-icbm.png" type="Texture" id=8]
+[ext_resource path="res://Images/us-icbm.png" type="Texture" id=9]
+[ext_resource path="res://Images/nuke-button-on.png" type="Texture" id=10]
+[ext_resource path="res://Images/nuke-button-off.png" type="Texture" id=11]
+[ext_resource path="res://Images/chart1.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/NuclearWar.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Khrushchev.gd" type="Script" id=14]
+[ext_resource path="res://Images/USSR-BTNS/escalate-unselect.png" type="Texture" id=15]
+[ext_resource path="res://Images/USSR-BTNS/negotiate-unselect.png" type="Texture" id=16]
+[ext_resource path="res://Images/USSR-BTNS/negotiate-hover.png" type="Texture" id=17]
+[ext_resource path="res://Images/USSR-BTNS/escalate-hover.png" type="Texture" id=18]
+[ext_resource path="res://Images/USSR-BTNS/negotiate-select.png" type="Texture" id=19]
+[ext_resource path="res://Animations/USSR-Choices/escalate.tres" type="Animation" id=20]
+[ext_resource path="res://Images/filter.png" type="Texture" id=21]
+[ext_resource path="res://Images/us-navy.png" type="Texture" id=22]
+[ext_resource path="res://Images/paper.png" type="Texture" id=24]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+outline_color = Color( 0.419608, 0.419608, 0.419608, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 44
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Missile-Animator/USSR-Missiles/cuba-icbm:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Missile-Animator/USSR-Missiles/cuba-icbm:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Missile-Animator/US-Missiles/us-icbm:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Missile-Animator/US-Missiles/us-icbm2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 10
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=8]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Choice-Animator/escalate-unselect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 2.5, 2.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Choice-Animator/negotiate-unselect:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 2.5, 2.8, 3, 3.2, 3.5, 3.7, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 19 ) ]
+}
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 350, 550 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=12]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeAnim/FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ships/us-navy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ships/us-navy6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ships/us-navy2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ships/us-navy3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Ships/us-navy4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Ships/us-navy5:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Open-Rect" type="ColorRect"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Details2" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = 244.692
+margin_right = 355.0
+margin_bottom = 272.692
+custom_fonts/font = SubResource( 1 )
+text = "Text here text hereText here text hereText here text hereText here text here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opening" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Open" type="Label" parent="Opening"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 37.0
+margin_top = 74.3431
+margin_right = 971.0
+margin_bottom = 158.343
+custom_fonts/font = ExtResource( 2 )
+text = "Between 1961 and 1963,the US deployed  Jupiter missiles at multiple sites in Turkey and Italy. These medium-range ballistic missiles (MRBMs) could travel up to about 1500 miles, well within the range of the Soviet Union from Turkey and Italy."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Open2" type="Label" parent="Opening"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 37.0
+margin_top = 182.0
+margin_right = 950.0
+margin_bottom = 261.0
+custom_fonts/font = ExtResource( 2 )
+text = "To match this, the USSR began construction of both MRBMs and ICBMs in Cuba, as discovered by a U-2 spy plane flying over Cuba."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Open3" type="Label" parent="Opening"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 37.0
+margin_top = 261.149
+margin_right = 971.0
+margin_bottom = 340.149
+custom_fonts/font = ExtResource( 2 )
+text = "This brought about an incredibly risky situation--known as the Cuban Missile
+Crisis--where both sides were ready to fire nuclear missiles at each other."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Open4" type="Label" parent="Opening"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 37.0
+margin_top = 415.299
+margin_right = 971.0
+margin_bottom = 494.299
+custom_fonts/font = ExtResource( 2 )
+text = "You, the President of the United States, are responsible for deciding
+how to react to this situation."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="Label" parent="Opening"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1.8583
+margin_top = 494.299
+margin_right = 935.858
+margin_bottom = 573.299
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.372549, 0.462745, 0.505882, 1 )
+text = "(click to continue)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="UI"]
+margin_left = 749.653
+margin_top = 509.008
+margin_right = 1014.65
+margin_bottom = 567.008
+custom_fonts/font = SubResource( 3 )
+text = " Oct 1962"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Turn" type="Label" parent="UI"]
+margin_left = 21.8583
+margin_top = 509.008
+margin_right = 286.858
+margin_bottom = 567.008
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "your turn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bottom" type="ColorRect" parent="UI"]
+margin_top = 500.0
+margin_right = 40.0
+margin_bottom = 520.0
+rect_scale = Vector2( 25.56, 0.16 )
+
+[node name="Mid" type="ColorRect" parent="UI"]
+margin_left = 505.228
+margin_top = 498.372
+margin_right = 545.228
+margin_bottom = 518.372
+rect_rotation = -90.0
+rect_scale = Vector2( 16.76, 0.16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Countries" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="USSR-Italy-Turkey" type="Sprite" parent="UI/Countries"]
+position = Vector2( 1172.31, 349.865 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 7 )
+
+[node name="US-Cuba" type="Sprite" parent="UI/Countries"]
+position = Vector2( 233.461, 267.798 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 5 )
+
+[node name="Missile-Animator" type="AnimationPlayer" parent="UI"]
+anims/fadecuba = SubResource( 4 )
+anims/fademissiles = SubResource( 5 )
+
+[node name="USSR-Missiles" type="Control" parent="UI/Missile-Animator"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cuba-icbm" type="Sprite" parent="UI/Missile-Animator/USSR-Missiles"]
+position = Vector2( 395.139, 407.69 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 1
+texture = ExtResource( 8 )
+
+[node name="US-Missiles" type="Control" parent="UI/Missile-Animator"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="us-icbm" type="Sprite" parent="UI/Missile-Animator/US-Missiles"]
+position = Vector2( 599, 337 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+
+[node name="us-icbm2" type="Sprite" parent="UI/Missile-Animator/US-Missiles"]
+position = Vector2( 795, 368 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+
+[node name="AnimTimer" type="Timer" parent="UI/Missile-Animator"]
+wait_time = 2.0
+
+[node name="Options" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option1" type="Button" parent="UI/Options"]
+margin_left = 243.004
+margin_top = 514.299
+margin_right = 400.004
+margin_bottom = 541.299
+custom_fonts/font = SubResource( 6 )
+text = "LAUNCH AIRSTRIKE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option2" type="Button" parent="UI/Options"]
+margin_left = 420.139
+margin_top = 514.299
+margin_right = 577.139
+margin_bottom = 541.299
+custom_fonts/font = SubResource( 6 )
+text = "NAVAL BLOCKADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option3" type="Button" parent="UI/Options"]
+margin_left = 420.139
+margin_top = 554.579
+margin_right = 577.139
+margin_bottom = 581.579
+custom_fonts/font = SubResource( 6 )
+text = "Do nothing"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnViewOutcome" type="Button" parent="UI/Options"]
+margin_left = 243.004
+margin_top = 554.579
+margin_right = 400.004
+margin_bottom = 581.579
+custom_fonts/font = SubResource( 6 )
+text = "See OUtcomes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NUKE" type="TextureButton" parent="UI/Options"]
+margin_left = 613.393
+margin_top = 509.008
+margin_right = 813.393
+margin_bottom = 709.008
+rect_scale = Vector2( 0.45, 0.45 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+
+[node name="ActionInfo" type="ConfirmationDialog" parent="UI"]
+margin_left = 103.858
+margin_top = 178.343
+margin_right = 503.858
+margin_bottom = 378.343
+dialog_text = "Veritatis tempore inventore nulla praesentium nihil repellendus tenetur nemo. Dignissimos vel et vel blanditiis aut dolorum facilis perferendis. Corrupti consequatur quo dolorem distinctio. Non eligendi velit vitae esse quo rerum iste."
+dialog_autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActionStats" type="WindowDialog" parent="UI"]
+margin_left = 569.711
+margin_top = 178.343
+margin_right = 969.711
+margin_bottom = 378.343
+window_title = "Possible Outcomes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chart1" type="Sprite" parent="UI/ActionStats"]
+position = Vector2( 200.289, 102.61 )
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="UI/ActionStats"]
+margin_left = 7.42798
+margin_top = 2.60989
+margin_right = 385.428
+margin_bottom = 16.6099
+text = "1 = worst option, 4 = best option. US makes the first move."
+
+[node name="Cuba" type="Node2D" parent="."]
+position = Vector2( 400, 420 )
+
+[node name="Spawnpoint" type="Node2D" parent="."]
+position = Vector2( 340, 360 )
+
+[node name="Timer" type="Timer" parent="Spawnpoint"]
+wait_time = 0.75
+
+[node name="NuclearWar" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LaunchTimer" type="Timer" parent="NuclearWar"]
+one_shot = true
+
+[node name="WarheadParent" type="Control" parent="NuclearWar"]
+margin_left = 506.636
+margin_top = 142.343
+margin_right = 546.636
+margin_bottom = 182.343
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Disclaimer" type="Label" parent="NuclearWar"]
+visible = false
+margin_left = 40.0
+margin_top = 581.579
+margin_right = 774.0
+margin_bottom = 595.579
+custom_fonts/font = SubResource( 7 )
+text = "Note: Due to the curvature of the Earth, geography, and also basic physics, this is not an accurate representation of nuclear war"
+
+[node name="BoomTimer" type="Timer" parent="NuclearWar"]
+wait_time = 0.5
+
+[node name="USSR-UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choice-Animator" type="AnimationPlayer" parent="USSR-UI"]
+anims/escalate = ExtResource( 20 )
+anims/negotiate = SubResource( 8 )
+
+[node name="escalate-unselect" type="Sprite" parent="USSR-UI/Choice-Animator"]
+position = Vector2( 322.82, 552.173 )
+texture = ExtResource( 15 )
+
+[node name="negotiate-unselect" type="Sprite" parent="USSR-UI/Choice-Animator"]
+position = Vector2( 488, 552.173 )
+texture = ExtResource( 16 )
+
+[node name="Letter" type="WindowDialog" parent="USSR-UI"]
+margin_left = 613.393
+margin_top = 40.0
+margin_right = 963.393
+margin_bottom = 590.0
+window_title = "Letter From Khrushchev"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="USSR-UI/Letter"]
+margin_right = 350.0
+margin_bottom = 550.0
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DragBox" type="Panel" parent="USSR-UI/Letter/Panel"]
+margin_right = 350.0
+margin_bottom = 30.0
+custom_styles/panel = SubResource( 10 )
+
+[node name="Body" type="RichTextLabel" parent="USSR-UI/Letter/Panel"]
+margin_left = 28.0
+margin_top = 72.173
+margin_right = 328.0
+margin_bottom = 572.173
+custom_fonts/mono_font = SubResource( 11 )
+custom_colors/default_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+text = "[. . .] We are willing to remove from Cuba the means which you regard as offensive. We are willing to carry this out and to make this pledge in the United Nations. Your representatives will make a declaration to the effect that the United States, for its part, considering the uneasiness and anxiety of the Soviet State, will remove its analogous means from Turkey. Let us reach agreement as to the period of time needed by you and by us to bring this about. And, after that, persons entrusted by the United Nations Security Council could inspect on the spot the fulfillment of the pledges made. Of course, the permission of the Governments of Cuba and Turkey is necessary for the entry into those countries of these representatives and for the inspection of the fulfillment of the pledge made by each side. Of course it would be best if these representatives enjoyed the confidence of the Security Council as well as yours and mine--both the United States and the Soviet Union--and also that of Turkey and Cuba. I do not think it would be difficult to select people who would enjoy the trust and respect of all parties concerned. . ."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="RichTextLabel" parent="USSR-UI/Letter/Panel"]
+margin_left = 28.0
+margin_top = 22.173
+margin_right = 328.0
+margin_bottom = 72.173
+custom_fonts/mono_font = SubResource( 11 )
+custom_colors/default_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+text = "
+Dear Mr. President,"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Footer" type="RichTextLabel" parent="USSR-UI/Letter/Panel"]
+margin_left = 28.0
+margin_top = 489.391
+margin_right = 328.0
+margin_bottom = 539.391
+custom_fonts/mono_font = SubResource( 11 )
+custom_colors/default_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+text = "Respectfully,
+		N. Khrushchev"
+
+[node name="ProposalWindow" type="WindowDialog" parent="USSR-UI"]
+margin_left = 40.0
+margin_top = 160.343
+margin_right = 540.0
+margin_bottom = 360.343
+window_title = "Compromise Proposal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="USSR-UI/ProposalWindow"]
+margin_left = 8.83398
+margin_top = 20.6099
+margin_right = 490.834
+margin_bottom = 170.61
+text = "In wake of the <attack type on/in> Cuba, the USSR has decided to negotiate
+ a compromise with the United States.
+
+If the US removes its nuclear weapons from Turkey and Italy, then the USSR promises to remove its nuclear weapons from Cuba. The USSR recognizes that a global nuclear war would have a
+devastating impact on the world and hopes to use this
+compromise as a step towards world peace."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimTimer" type="Timer" parent="USSR-UI"]
+wait_time = 4.0
+
+[node name="BoomTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="FadeAnim" type="AnimationPlayer" parent="."]
+anims/fade_in = SubResource( 12 )
+
+[node name="FadeRect" type="ColorRect" parent="FadeAnim"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="filter" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.227451 )
+position = Vector2( 512, 300 )
+z_index = 1
+texture = ExtResource( 21 )
+
+[node name="Ships" type="AnimationPlayer" parent="."]
+anims/show_ships = SubResource( 13 )
+
+[node name="us-navy" type="Sprite" parent="Ships"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 370.139, 378.343 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 22 )
+
+[node name="us-navy6" type="Sprite" parent="Ships"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 381.6, 448.622 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 22 )
+
+[node name="us-navy2" type="Sprite" parent="Ships"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 343.935, 425.588 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 22 )
+
+[node name="us-navy3" type="Sprite" parent="Ships"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 400, 386.81 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 22 )
+
+[node name="us-navy4" type="Sprite" parent="Ships"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 426.66, 399.61 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 22 )
+
+[node name="us-navy5" type="Sprite" parent="Ships"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 315.117, 420.783 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 22 )
+
+[connection signal="timeout" from="UI/Missile-Animator/AnimTimer" to="." method="_on_AnimTimer_timeout"]
+[connection signal="pressed" from="UI/Options/Option1" to="." method="_on_Option1_pressed"]
+[connection signal="pressed" from="UI/Options/Option2" to="." method="_on_Option2_pressed"]
+[connection signal="pressed" from="UI/Options/Option3" to="." method="_on_Option3_pressed"]
+[connection signal="pressed" from="UI/Options/BtnViewOutcome" to="." method="_on_BtnViewOutcome_pressed"]
+[connection signal="pressed" from="UI/Options/NUKE" to="." method="_on_NUKE_pressed"]
+[connection signal="confirmed" from="UI/ActionInfo" to="." method="_on_ActionInfo_confirmed"]
+[connection signal="popup_hide" from="UI/ActionInfo" to="." method="_on_ActionInfo_popup_hide"]
+[connection signal="timeout" from="Spawnpoint/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="NuclearWar/LaunchTimer" to="NuclearWar" method="_on_InstigatorTimer_timeout"]
+[connection signal="timeout" from="NuclearWar/BoomTimer" to="NuclearWar" method="_on_BoomTimer_timeout"]
+[connection signal="timeout" from="USSR-UI/AnimTimer" to="USSR-UI" method="_on_AnimTimer_timeout"]
+[connection signal="timeout" from="BoomTimer" to="." method="_on_BoomTimer_timeout"]

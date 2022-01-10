@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Warhead.gd" type="Script" id=1]
+[ext_resource path="res://Images/us-warhead.png" type="Texture" id=3]
+
+[node name="us-warhead" type="Sprite"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
